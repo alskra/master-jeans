@@ -22,14 +22,6 @@
 }
 
 
-.icon-close:before {
+.icon-angle-right:before {
   content: "\E001";
-}
-
-.icon-mouse:before {
-  content: "\E002";
-}
-
-.icon-view:before {
-  content: "\E003";
 }

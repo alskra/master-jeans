@@ -21,16 +21,9 @@ $brand-info ?=          #5bc0de
 $brand-warning ?=       #f0ad4e
 $brand-danger ?=        #d9534f
 
-$blue-1 ?=              #04b6f5
-.blue-1
-  color $blue-1
-$blue-2 ?=              #36cbff
-.blue-2
-  color $blue-2
-
-$blue-3 ?=              #0eb6f5
-.blue-3
-  color $blue-3
+$red-1 ?=               #bd212c
+.red-1
+  color $red-1
 
 
 //== Scaffolding
@@ -38,14 +31,14 @@ $blue-3 ?=              #0eb6f5
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg ?=               #1d1c2a
+$body-bg ?=               #ffffff
 //** Global text color on `<body>`.
-$text-color ?=            #cfcddd
+$text-color ?=            #888
 
 //** Global textual link color.
-$link-color ?=            $blue-1
+$link-color ?=            $red-1
 //** Link hover color set via `darken()` function.
-$link-hover-color ?=      darken($blue-1, 15)
+$link-hover-color ?=      darken($red-1, 10)
 //** Link hover decoration.
 $link-hover-decoration ?= underline
 
@@ -54,7 +47,7 @@ $link-hover-decoration ?= underline
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif ?= 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-sans-serif ?= 'museo_sans_cyrl', "Helvetica Neue", Helvetica, Arial, sans-serif
 $font-family-serif ?=      Georgia, "Times New Roman", Times, serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace ?=  Menlo, Monaco, Consolas, "Courier New", monospace
@@ -64,7 +57,7 @@ $font-size-base ?=         15px
 $font-size-large ?=        ceil($font-size-base * 1.25) // ~18px
 $font-size-small ?=        ceil($font-size-base * 0.85) // ~12px
 
-$font-size-h1 ?=           28px // ~36px
+$font-size-h1 ?=           18px // ~36px
 $font-size-h2 ?=           20px // ~30px
 $font-size-h3 ?=           16px // ~24px
 $font-size-h4 ?=           14px // ~18px
@@ -72,17 +65,17 @@ $font-size-h5 ?=           $font-size-base
 $font-size-h6 ?=           ceil($font-size-base * 0.85) // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base ?=       28/15 // 20/14
+$line-height-base ?=       18/15 // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed ?=   floor($font-size-base * $line-height-base) // ~20px
 
-$font-weight-base ?=       400
+$font-weight-base ?=       300
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family ?=   inherit
-$headings-font-weight ?=   700
+$headings-font-weight ?=   500
 $headings-line-height ?=   1.25
-$headings-color ?=         #ffffff
+$headings-color ?=         #2c2c2c
 
 
 //== Iconography
@@ -306,14 +299,14 @@ $screen-phone ?=             $screen-xs-min
 
 // Small screen / tablet
 //** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm ?=                1024px
+$screen-sm ?=                768px
 $screen-sm-min ?=            $screen-sm
 //** Deprecated `$screen-tablet` as of v3.0.1
 $screen-tablet ?=            $screen-sm-min
 
 // Medium screen / desktop
 //** Deprecated `$screen-md` as of v3.0.1
-$screen-md ?=                1300px
+$screen-md ?=                1200px
 $screen-md-min ?=            $screen-md
 //** Deprecated `$screen-desktop` as of v3.0.1
 $screen-desktop ?=           $screen-md-min

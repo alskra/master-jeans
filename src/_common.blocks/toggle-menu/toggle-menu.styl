@@ -1,31 +1,36 @@
 .toggle-menu
   padding 0
   border 0
-  background none
-  display block
-  width 26px
-  height 26px
+  background $red-1
+  width 41px
+  height 41px
   font-size 24px
   line-height 1
   color white
   position relative
-  z-index $zindex-navbar-fixed
-  transition 0.3s
+  transition 0.15s
   &:active
     transition none
+    background darken($red-1, 10)
   &__line
-    size 26px 2px
+    size 17px 1px
     background white
-    transition inherit
+    transition 0.2s linear
     transform-origin 50% 50%
     display block
     margin 0 auto
     pointer-events none
     &+&
-      margin-top 8px
+      margin-top 6px
   &:focus
-    outline none
+    outline 0
   &_opened
-    justify-content center
     &>{$p}__line
-      display none
+      width 21px
+      &:nth-child(1)
+        transform rotate(45deg)
+      &:nth-child(2)
+        opacity 0
+        margin -1px auto -7px
+      &:nth-child(3)
+        transform rotate(-45deg)

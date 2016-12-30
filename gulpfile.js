@@ -75,7 +75,7 @@ gulp.task('generate-favicon', function(done) {
                 pictureAspect: 'noChange',
                 themeColor: '#333333',
                 manifest: {
-                    name: 'Master Jeans',
+                    name: 'MasterJeans',
                     display: 'standalone',
                     orientation: 'notSet',
                     onConflict: 'override',
@@ -196,6 +196,7 @@ gulp.task('css', function() {
         concat({path: 'main.styl'}),
         stylus({
             'include css': true,
+            'disable-cache': true,
             use: [autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 10'],
                 cascade: false
@@ -375,11 +376,10 @@ gulp.task('watch', function() {
     gulp.watch('src/templates/**/*.pug', gulp.series('html', 'img', gulp.parallel('css', 'js:main')))
         .on('all', function(event, filepath) {
             global.emittyChangedFile = filepath;
-            console.log('emittyChangedFile: ' + filepath);
+            console.log('emittyChangedFile: ' + global.emittyChangedFile);
         })
         .on('unlink', function (filepath) {
             delete depsObj[path.parse(filepath).name];
-            return del('public/' + path.parse(filepath).name + '.html');
         });
     gulp.watch(['src/**/*.{css,styl}', 'app_components/**/*.{css,styl}'], gulp.series('css'));
     gulp.watch(['src/**/*.js', 'app_components/**/*.js'], gulp.series('js'));

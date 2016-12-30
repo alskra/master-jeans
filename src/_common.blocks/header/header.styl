@@ -1,3 +1,19 @@
 .header
-  position relative
+  flex none
+  position fixed
+  top 0
+  left 0
+  width 100%
   z-index $zindex-navbar-fixed
+  &__top
+    background-color #333
+    height 41px
+    .container-fluid
+      padding 0
+      display flex
+      justify-content space-between
+      &:before, &:after
+        content normal
+  &__bottom
+    .container-fluid
+      padding 0

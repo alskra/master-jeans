@@ -1,7 +1,18 @@
+include menu
+
 mixin header()
   // Header
   header.-header&attributes(attributes)
-    .container-fluid
-      +a(pages.index.url).-logo
-        +img('img/logo.png', pkg.name).__img
+    .__top
+      .container-fluid
+        button(type='button').-toggle-menu
+          span.__line
+          span.__line
+          span.__line
+        +a(pages.index.url).-logo
+          +img('img/logo-xs.svg', pkg.name)
+    .__bottom
+      .container-fluid
+        +menu(menuList, [pages.index])
+
   // /Header
