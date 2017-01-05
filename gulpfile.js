@@ -190,13 +190,17 @@ gulp.task('css', function() {
     });
     const fStyl = filter(function (file) {return file.extname == '.styl'}, {restore: true});
     return combiner(
-        gulp.src(depsCss.concat(depsArr.map(function (dep) {return path.join(dep, '**/*.styl');}))),
+        gulp.src(depsCss.concat(depsArr.map(function (dep) {return path.join(dep, '**/*.styl');})))
+            .on('data', function (file) {
+                console.log(file.basename + ': ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
+            }).on('end', function (file) {
+            console.log('gulp.src END: ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
+        }),
         gulpIf(isDevelopment, sourcemaps.init()),
         fStyl,
         concat({path: 'main.styl'}),
         stylus({
             'include css': true,
-            'disable-cache': true,
             use: [autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 10'],
                 cascade: false

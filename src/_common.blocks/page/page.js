@@ -1,4 +1,4 @@
-var $screenSm = 1024,
-    $screenMd = 1300;
+var $screenSm = 768,
+    $screenMd = 1200;
 
 

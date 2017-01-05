@@ -22,6 +22,34 @@
 }
 
 
-.icon-angle-right:before {
+.icon-angle-right-2:before {
   content: "\E001";
+}
+
+.icon-angle-right:before {
+  content: "\E002";
+}
+
+.icon-delivery:before {
+  content: "\E003";
+}
+
+.icon-guarantee:before {
+  content: "\E004";
+}
+
+.icon-hanger:before {
+  content: "\E005";
+}
+
+.icon-minus:before {
+  content: "\E006";
+}
+
+.icon-plus:before {
+  content: "\E007";
+}
+
+.icon-sale:before {
+  content: "\E008";
 }

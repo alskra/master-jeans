@@ -1,0 +1,21 @@
+include write-item-2
+
+-
+  var writesList2 = [
+  {img: 'files/pics/news/wrangler.jpg',
+  title: 'Коллекция Wrangler Denim Performance 2016',
+  date: '03.11.2016',
+  caption: 'Компания Wrangler выпустила новую коллекцию одежды. Об этом сообщается в пресс-релизе, поступившем в редакцию «Ленты.ру» в понедельник, 25 апреля.' +
+  'Линейка получила название Active Ready.' +
+  'В нее вошли так называемые «спортивные джинсы». По словам производителей, они выглядят будто сделаны из денима, но на самом деле сшиты из трикотажной ткани с применением инновационных технологий. Модель представлена в нескольких вариантах: как с поясом на шнуровке, так и в классическом виде — с пятью карманами.',
+  },
+  ]
+
+mixin writes-list-2(data)
+  // Writes-list-2
+  .-writes-list-2&attributes(attributes)
+    .container-fluid
+      .row
+        each item, index in data
+          +write-item-2(item)
+  // /Writes-list-2

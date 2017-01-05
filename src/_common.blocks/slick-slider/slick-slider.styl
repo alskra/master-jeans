@@ -7,7 +7,9 @@
   margin 0
   padding 0
 .slick-disabled
+  cursor $cursor-disabled
   opacity 0.65
+  box-shadow none
   pointer-events none
 .slick-dots
   list-style none
@@ -21,11 +23,12 @@
   color transparent
   text-align center
   li
-    margin 9px 9px 0
+    margin 4px 9px
     button
       square(9px)
       border-radius 50%
-      background-color #d5dee4
+      background-color #ddd
+      transition 0.15s
     &.slick-active
       button
-        background-color $blue-1
+        background-color #333

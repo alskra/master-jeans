@@ -5,12 +5,13 @@ mixin header()
   header.-header&attributes(attributes)
     .__top
       .container-fluid
-        button(type='button').-toggle-menu
+        button(type='button').-toggle-menu.hidden-sm.hidden-md.hidden-lg
           span.__line
           span.__line
           span.__line
         +a(pages.index.url).-logo
-          +img('img/logo-xs.svg', pkg.name)
+          +img('img/logo-xs.svg', pkg.name).__img.hidden-sm.hidden-md.hidden-lg
+          +img('img/logo-sm.png', pkg.name).__img.hidden-xs
     .__bottom
       .container-fluid
         +menu(menuList, [pages.index])

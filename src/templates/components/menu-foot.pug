@@ -1,0 +1,32 @@
+-
+  var menuFootList = [
+    {title: 'Компания', url: voidHref, submenu: [
+      {title: 'О нас', url: voidHref},
+      {title: 'Торговая марка', url: voidHref},
+      {title: 'Контакты', url: voidHref},
+      {title: 'FAQ', url: voidHref}
+    ]},
+    {title: 'Информация', url: voidHref, submenu: [
+      {title: 'Уход за изделиями', url: voidHref},
+      {title: 'Подобрать размер', url: voidHref},
+      {title: 'Вопросы', url: voidHref},
+      {title: 'Арендодателям', url: voidHref},
+      {title: 'Где купить', url: voidHref}
+    ]}
+  ];
+
+mixin menu-foot(menuFootList)
+  nav.-menu-foot&attributes(attributes)
+    each item in menuFootList
+      .__item._lvl_1(class={_submenu: item.submenu})
+        a.__btn._lvl_1(href= item.url)
+          span.__label._lvl_1= item.title
+          span.__icon._lvl_1.icon(class=item.submenu ? icon-angle-right : icon-angle-right)
+        if item.submenu
+          .__submenu._lvl_1
+            .container-fluid
+              each itemInner in item.submenu
+                .-menu.__item._lvl_2(class={_submenu: itemInner.submenu})
+                  a.__btn._lvl_2(href= itemInner.url)
+                    span.__label._lvl_2= itemInner.title
+                    span.__icon._lvl_2

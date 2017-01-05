@@ -5,11 +5,15 @@ include components/header
 include components/content
 include components/footer
 
+include components/products-list
+include components/writes-list
+
 +doctype(pages.index.title)
   .-wrapper
     +header
     +content
-      .-main-slider.slick-slider(data-slick={"autoplay": false, "autoplaySpeed": 7000})
+      // Main Slider
+      .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 7000})
         .__item.slick-slide
           .__img-wrap
             +img('files/pics/main-slider/slide-1.jpg', '', 'fit').__img
@@ -20,4 +24,91 @@ include components/footer
             .__caption
               strong.__sale #[small +] 2%
               .__caption-inner К вашей скидке постоянного покупателя
+            .__btn-wrap
+              +a.-btn._type_1 #[span.__label Подробнее]#[span.__icon.icon.icon-angle-right-2]
+          .__img-wrap.hidden-xs.hidden-sm
+            +img('files/pics/main-slider/slide-2.jpg', '', 'fit').__img
+
+        .__item.slick-slide
+          .__img-wrap
+            +img('files/pics/main-slider/slide-3.jpg', '', 'fit').__img
+          .__text
+            .__header Elevatuss prarereя
+            h2.__title Nunquam attrahendam verpaо Trabem solite ducunt ad albus boreas
+            hr.__hr
+            .__caption
+              strong.__sale #[small +] 3%
+              .__caption-inner К вашей скидке постоянного покупателя
+            .__btn-wrap
+              +a.-btn._type_1 #[span.__label Подробнее]#[span.__icon.icon.icon-angle-right-2]
+          .__img-wrap.hidden-xs.hidden-sm
+            +img('files/pics/main-slider/slide-4.jpg', '', 'fit').__img
+
+      // Advantages
+      .-advantages-list
+        .container-fluid
+          .row
+            figure.-advantage-item
+              .__icon.icon.icon-hanger
+              figcaption.__caption Примерка перед покупкой
+            figure.-advantage-item
+              .__icon.icon.icon-delivery
+              figcaption.__caption Бесплатная доставка
+            figure.-advantage-item
+              .__icon.icon.icon-sale
+              figcaption.__caption Гибкая система скидок
+            figure.-advantage-item
+              .__icon.icon.icon-guarantee
+              figcaption.__caption Гарантия высокого качества
+
+      // New products
+      section.-section
+        header.__header
+          .container-fluid
+            h2.-section.__title Новинки
+        +products-list(productsList.slice(0, 4))._one-row
+
+      // News
+      section.-section
+        header.__header
+          .container-fluid
+            h2.-section.__title Новости
+        +writes-list(writesList.slice(0, 3))._one-row
+
+      // Brands
+      section.-section
+        header.__header
+          .container-fluid
+            h2.-section.__title Бренды
+        .-brands-list
+          .container-fluid
+            .slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 10000})
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/lee.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/wrangler.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/LeeCoo.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/Rifle.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/GJ.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/Bogner.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/lee.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/wrangler.png', '').__img
+              .slick-slide
+                +a().-brand-item
+                  +img('files/pics/brands/LeeCoo.png', '').__img
+
     +footer

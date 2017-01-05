@@ -1,23 +1,39 @@
 .btn
+  &__label
+    display block
+    text-overflow ellipsis
+  &__icon
+    flex none
+    display block
+
   &_type
     &_1
       color white
       font-weight 700
-      font-size 12px
+      font-size 13px
+      line-height 1.1em
       text-transform uppercase
-      padding 5px 20px
-      background $blue-1
+      padding 5px 20px 4px
+      background #333
       height 39px
+      width 180px
       &:hover,
       &:focus,
       &.focus
         color white
-        background-color $blue-2
+        background-color $red-1
       &:active,
       &.active
         box-shadow inset 0 3px 5px rgba(0, 0, 0, .125)
-
-  &__label
-    overflow hidden
-    text-overflow ellipsis
-
+      .icon-angle-right-2
+        font-size 10px
+        margin-left 12px
+    &_2
+      color #333
+      font-weight 500
+      font-size 13px
+      line-height 1.1em
+      text-transform uppercase
+      padding 5px 20px 4px
+      border 1px solid #2c2c2c
+      height 39px

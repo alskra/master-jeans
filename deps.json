@@ -30,7 +30,7 @@
     "css": "./src/fonts/font-awesome/font-awesome.css"
   },
   "fonts": {
-    "css": ["./src/fonts/zero-width/zero-width.css"]
+    "css": ["./src/fonts/zero-width/zero-width.css", "./src/fonts/MuseoSansCyrl/MuseoSansCyrl.css"]
   },
   "goodshare": {
     "js": "./app_components/goodshare/goodshare.min.js"
@@ -41,10 +41,6 @@
   },
   "jquery.ikSelect": {
     "js": "./app_components/jquery.ikSelect/jquery.ikSelect.min.js"
-  },
-  "jquery.onepage-scroll": {
-    "css": "./app_components/jquery.onepage-scroll/onepage-scroll.css",
-    "js": "./app_components/jquery.onepage-scroll/jquery.onepage-scroll.js"
   },
   "bootstrap": {
     "css": "./app_components/bootstrap/css/index.styl",
@@ -59,8 +55,7 @@
     "img-object-fit",
     "slick-carousel",
     "perfect-scrollbar",
-    "jquery.arcticmodal",
-    "jquery.onepage-scroll"
+    "jquery.arcticmodal"
   ],
   "js": [
     "modernizr",
@@ -73,8 +68,7 @@
     "perfect-scrollbar",
     "goodshare",
     "jquery.arcticmodal",
-    "jquery.ikSelect",
-    "jquery.onepage-scroll"
+    "jquery.ikSelect"
   ],
 
   "levels": ["./src/_common.blocks/"]

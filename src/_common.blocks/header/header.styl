@@ -5,15 +5,23 @@
   left 0
   width 100%
   z-index $zindex-navbar-fixed
+  .container-fluid
+    padding 0
   &__top
     background-color #333
     height 41px
     .container-fluid
-      padding 0
       display flex
       justify-content space-between
       &:before, &:after
         content normal
-  &__bottom
+
+  @media (min-width $screen-sm-min)
+    position relative
+    border-bottom 1px solid $red-1
     .container-fluid
-      padding 0
+      padding-left $grid-gutter-width
+      padding-right @padding-left
+    &__top
+      height 34px
+

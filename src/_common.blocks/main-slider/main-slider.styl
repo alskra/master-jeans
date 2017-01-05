@@ -1,5 +1,6 @@
 .main-slider
   height calc(100vh - 41px)
+  margin-bottom 40px
   p
     margin 0
   .slick-list, .slick-track, .slick-slide
@@ -7,13 +8,24 @@
   .container-fluid
     height 100%
   .slick-arrow
+    square 51px
+    background-color #333
     position absolute
+    top 50%
+    margin -25px 0
+    font-size 10px
+    line-height 1em
+    padding-top 1px
+    color white
+    z-index 10
+    transition 0.15s
+    &:hover, &:focus
+      background $red-1
   .slick-prev
-    right 50%
-    margin-right -6px
+    left 0
+    transform rotate(180deg)
   .slick-next
-    left 50%
-    margin-left -6px
+    right 0
   &__item
     position relative
   &__img-wrap
@@ -35,9 +47,7 @@
     letter-spacing 0.2em
     text-align center
     margin 0 0 10px
-    overflow hidden
     text-overflow ellipsis
-    white-space nowrap
   &__title
     font-size 24px
     line-height 1em
@@ -66,14 +76,25 @@
     line-height 1
     flex none
     font-weight 700
-    margin-right 10px
+    margin-right 6px
     small
       font-size 18px
       display inline-block
       vertical-align middle
-      margin -4px -8px 0 0
+      margin -9px -8px 0 0
+  &__btn-wrap
+    margin-top 30px
+    text-align center
 
   @media (min-width $screen-sm-min)
+    height auto
+    margin-bottom 25px
+    .slick-list
+      height 450px
+    .slick-dots
+      padding 14px 20px
+    .slick-arrow
+      margin -48px 0
     &__item
       display flex !important
     &__img-wrap
@@ -83,12 +104,36 @@
       position static
       flex none
       width 50%
-      background radial-gradient(circle at 50% 50%, rgba(white, 0.5), transparent) no-repeat, url("text-bg.jpg") repeat 0 0/800px auto rgba(black, 0.6)
+      background radial-gradient(circle at 50% 50%, rgba(white, 0.5), transparent) no-repeat, url("text-bg.jpg") repeat 0 0/780px auto
       display flex
       flex-flow column
-      align-items center
+      justify-content center
       color #333
+      padding 20px 45px
     &__header
       color #2c2c2c
     &__title
       font-size 53px
+    &__hr
+      border-top-color rgba(#333, 0.2)
+      margin 10px 0 22px
+    &__btn-wrap
+      margin-top 45px
+
+  @media (min-width $screen-md-min)
+    .slick-list
+      height 550px
+    .slick-prev
+      left 30px
+    .slick-next
+      right 30px
+    &__img-wrap
+      width percentage(1/3)
+    &__text
+      width percentage(1/3)
+      background-size auto, auto
+      padding 20px 85px
+    &__header
+      margin-bottom 20px
+    &__title
+      font-size 67px

@@ -1,0 +1,30 @@
+.advantage-item
+  width calc(50% - 20px)
+  padding 0 0 22px
+  text-align center
+  margin 0 10px 40px
+  background linear-gradient(#b9b9b9, #b9b9b9) no-repeat 50% 100%/46px 1px
+  &__icon
+    height 60px
+    color #333
+    font-size 40px
+    line-height 1em
+    display flex
+    justify-content center
+    align-items center
+    margin-bottom 10px
+    &.icon-delivery
+      font-size 32px
+    &.icon-sale
+      font-size 41px
+    &.icon-guarantee
+      font-size 37px
+  &__caption
+    color #2c2c2c
+    font-weight 500
+    font-size 12px
+    line-height 1.25em
+    text-transform uppercase
+
+  @media (min-width $screen-sm-min)
+    width calc(25% - 20px)

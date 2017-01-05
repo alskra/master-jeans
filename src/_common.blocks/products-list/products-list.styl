@@ -1,0 +1,14 @@
+.products-list
+  .row
+    display flex
+    flex-flow row wrap
+  &_one-row
+    .product-item
+      &:last-child
+        display none
+
+  @media (min-width $screen-md-min)
+    &_one-row
+    .product-item
+      &:last-child
+        display block

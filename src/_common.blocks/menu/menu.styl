@@ -7,7 +7,7 @@
   &__item
     &+&
       margin-top 1px
-    &_current
+    &:hover, &:focus, &_current
       &>{$p}__btn
         color white
         background-color $red-1
@@ -18,22 +18,21 @@
     color #2c2c2c
     background-color #f3f3f3
     font-size 16px
+    line-height 1.1em
     text-transform uppercase
     font-weight 500
     display flex
     padding 5px 20px
     height 41px
+    transition 0.15s
     &:hover, &:focus
-      color white
-      background-color $red-1
-      &>{$p}__icon
-        color white
+      color #2c2c2c
   &__label
     flex 1 1 auto
-    overflow hidden
-    white-space nowrap
+    display block
     text-overflow ellipsis
     align-self center
+    margin-top 1px
   &__icon
     flex none
     display flex
@@ -41,5 +40,35 @@
     align-items center
     color #333
     font-size 15px
-    line-height 1
     transition inherit
+
+  @media (min-width $screen-sm-min)
+    border-bottom 0
+    display flex !important
+    flex-flow row wrap
+    max-height none
+    overflow-y visible
+    justify-content space-around
+    margin 0 (-($grid-gutter-width))
+    padding 50px ($grid-gutter-width/2) 15px
+    &__item
+      overflow hidden
+      margin 0 10px 10px
+      &+&
+        margin-top 0
+      &:hover, &:focus, &_current
+        &>{$p}__btn
+          color $red-1
+          background-color transparent
+    &__btn
+      background-color transparent
+      font-weight 700
+      padding 0
+      height auto
+    &__label
+      margin-top 0
+    &__icon
+      display none
+
+  @media (min-width $screen-md-min)
+    padding 68px ($grid-gutter-width*9) 20px
