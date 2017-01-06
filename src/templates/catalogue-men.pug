@@ -1,0 +1,17 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
++doctype(pages.catalogueMen.title)
+  .-wrapper
+    +header([pages.catalogueMen.url])
+    +content
+      section.-section
+        header.__header
+          .container-fluid
+            h2.-section.__title._text_left Каталог Одежды для мужчин
+
+    +footer

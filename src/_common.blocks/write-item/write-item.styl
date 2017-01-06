@@ -9,6 +9,10 @@
     padding-top unquote('calc(' + percentage(204/362) + ' + 40px)')
     overflow hidden
     margin 0 -20px 24px
+    &:hover, &:focus
+      &+{$p}__title
+        &>{$p}__title-link
+          color $red-1
   &__img
     position absolute
     top 0

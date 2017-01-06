@@ -41,6 +41,10 @@
     z-index 1
     color white
     line-height 1.25
+    opacity 1
+    transition 0.2s
+    .loading_before &
+      opacity 0
   &__header
     font-size 16px
     text-transform uppercase
@@ -96,7 +100,8 @@
     .slick-arrow
       margin -48px 0
     &__item
-      display flex !important
+      .slick-initialized &
+        display flex
     &__img-wrap
       flex none
       width 50%

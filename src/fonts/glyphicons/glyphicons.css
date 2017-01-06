@@ -30,26 +30,42 @@
   content: "\E002";
 }
 
-.icon-delivery:before {
+.icon-circle-arrow:before {
   content: "\E003";
 }
 
-.icon-guarantee:before {
+.icon-delivery:before {
   content: "\E004";
 }
 
-.icon-hanger:before {
+.icon-fb:before {
   content: "\E005";
 }
 
-.icon-minus:before {
+.icon-guarantee:before {
   content: "\E006";
 }
 
-.icon-plus:before {
+.icon-hanger:before {
   content: "\E007";
 }
 
-.icon-sale:before {
+.icon-ins:before {
   content: "\E008";
+}
+
+.icon-minus:before {
+  content: "\E009";
+}
+
+.icon-plus:before {
+  content: "\E00A";
+}
+
+.icon-sale:before {
+  content: "\E00B";
+}
+
+.icon-tw:before {
+  content: "\E00C";
 }

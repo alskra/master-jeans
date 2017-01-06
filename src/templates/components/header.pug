@@ -1,6 +1,6 @@
 include menu
 
-mixin header()
+mixin header(urls)
   // Header
   header.-header&attributes(attributes)
     .__top
@@ -14,6 +14,6 @@ mixin header()
           +img('img/logo-sm.png', pkg.name).__img.hidden-xs
     .__bottom
       .container-fluid
-        +menu(menuList, [pages.index])
+        +menu(menuList, urls)
 
   // /Header

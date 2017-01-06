@@ -32,6 +32,7 @@ const realFavicon = require('gulp-real-favicon');
 const fs = require('fs');
 const cache  = require('gulp-memory-cache');
 const zip = require('gulp-zip');
+const watch = require('gulp-watch');
 
 global.isDevelopment = process.env.NODE_ENV !== 'production';
 global.depsObj = {};
@@ -377,7 +378,7 @@ gulp.parallel('html', 'fonts', 'fontawesome', 'glyphicons', 'files'), 'img', gul
 gulp.task('watch', function() {
     global.isWatch = true;
 
-    gulp.watch('src/templates/**/*.pug', gulp.series('html', 'img', gulp.parallel('css', 'js:main')))
+    watch('src/templates/**/*.pug', gulp.series('html', 'img', gulp.parallel('css', 'js:main')))
         .on('all', function(event, filepath) {
             global.emittyChangedFile = filepath;
             console.log('emittyChangedFile: ' + global.emittyChangedFile);
@@ -385,13 +386,13 @@ gulp.task('watch', function() {
         .on('unlink', function (filepath) {
             delete depsObj[path.parse(filepath).name];
         });
-    gulp.watch(['src/**/*.{css,styl}', 'app_components/**/*.{css,styl}'], gulp.series('css'));
-    gulp.watch(['src/**/*.js', 'app_components/**/*.js'], gulp.series('js'));
-    gulp.watch(JSON.parse(fs.readFileSync(depsData)).levels.map(function (dep) {return path.join(dep, '**/*.{png,jpg,gif,svg}');}), gulp.series('img'));
-    gulp.watch(['src/fonts/**/*.{woff2,woff,ttf,eot,svg}', '!src/fonts/glyphicons/**/*.*'], gulp.series('fonts'));
-    gulp.watch('src/fonts/glyphicons/icons/*.svg', gulp.series('glyphicons'));
-    gulp.watch('src/files/**/*.*', gulp.series('files'));
-    gulp.watch([pkgData, depsData], gulp.series('html', 'img', gulp.parallel('css', 'js')));
+    watch(['src/**/*.{css,styl}', 'app_components/**/*.{css,styl}'], gulp.series('css'));
+    watch(['src/**/*.js', 'app_components/**/*.js'], gulp.series('js'));
+    watch(JSON.parse(fs.readFileSync(depsData)).levels.map(function (dep) {return path.join(dep, '**/*.{png,jpg,gif,svg}');}), gulp.series('img'));
+    watch(['src/fonts/**/*.{woff2,woff,ttf,eot,svg}', '!src/fonts/glyphicons/**/*.*'], gulp.series('fonts'));
+    watch('src/fonts/glyphicons/icons/*.svg', gulp.series('glyphicons'));
+    watch('src/files/**/*.*', gulp.series('files'));
+    watch([pkgData, depsData], gulp.series('html', 'img', gulp.parallel('css', 'js')));
 });
 
 gulp.task('serve', function() {

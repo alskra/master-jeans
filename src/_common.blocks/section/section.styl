@@ -2,15 +2,19 @@
   padding 15px 0
   &__header
     border-bottom 1px solid #ececec
-    padding 15px 0
+    padding 15px 0 12px
     margin -15px 0 30px
   &__title
     text-align center
     font-weight 900
     font-size 16px
-    padding-bottom 16px
-    margin 0 0 -16px
+    padding-bottom 13px
+    margin 0 0 -13px
     background linear-gradient($red-1, $red-1) no-repeat 50% 100%/46px 1px
+    &_text
+      &_left
+        text-align left
+        background-position 0% 100%
 
   @media (min-width $screen-md-min)
     &__header

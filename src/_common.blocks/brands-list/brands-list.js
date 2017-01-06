@@ -23,6 +23,12 @@ $(function () {
                 }
             },
             {
+                breakpoint: 1024 - 1,
+                settings: {
+                    slidesToShow: 5
+                }
+            },
+            {
                 breakpoint: $screenMd - 1,
                 settings: {
                     slidesToShow: 6

@@ -5,9 +5,11 @@
   max-height calc(100vh - 41px)
   overflow-y auto
   &__item
-    &+&
+    &_lvl_1
       margin-top 1px
-    &:hover, &:focus, &_current
+      &:first-child
+        margin-top 0
+    &_current
       &>{$p}__btn
         color white
         background-color $red-1
@@ -26,7 +28,10 @@
     height 41px
     transition 0.15s
     &:hover, &:focus
-      color #2c2c2c
+      color white
+      background-color $red-1
+      &>{$p}__icon
+        color white
   &__label
     flex 1 1 auto
     display block
@@ -47,16 +52,16 @@
     display flex !important
     flex-flow row wrap
     max-height none
+    height auto !important
     overflow-y visible
     justify-content space-around
-    margin 0 (-($grid-gutter-width))
-    padding 50px ($grid-gutter-width/2) 15px
+    padding 50px 0 15px !important
     &__item
       overflow hidden
       margin 0 10px 10px
-      &+&
+      &_lvl_1
         margin-top 0
-      &:hover, &:focus, &_current
+      &_current
         &>{$p}__btn
           color $red-1
           background-color transparent
@@ -65,10 +70,13 @@
       font-weight 700
       padding 0
       height auto
+      &:hover, &:focus
+        color $red-1
+        background-color transparent
     &__label
       margin-top 0
     &__icon
       display none
 
   @media (min-width $screen-md-min)
-    padding 68px ($grid-gutter-width*9) 20px
+    padding 68px ($grid-gutter-width*8) 20px !important

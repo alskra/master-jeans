@@ -1,3 +1,50 @@
 .footer
   flex none
   border-top 1px solid $red-1
+  position relative
+  .social
+    margin-bottom 20px
+  p
+    margin-bottom 10px
+  &__top
+    color #888
+    font-size 13px
+    line-height 1.25
+  &__bottom
+    background-color #333
+    padding 30px 0
+    color #999
+    font-size 13px
+    line-height 1.25
+    text-align center
+    a
+      color inherit
+      &:hover, &:focus
+        color $red-1
+  &__title
+    color #2c2c2c
+    font-weight 700
+    font-size 16px
+    line-height 1.25em
+    text-transform uppercase
+    margin-bottom 30px
+
+  @media (min-width $screen-sm-min)
+    &__top
+      padding 25px 0
+      background #f3f3f3
+    &__bottom
+      text-align left
+      padding 9px 0
+      p
+        margin 0
+    &__developer
+      text-align right
+
+  @media (min-width $screen-md-min)
+    &__top
+      padding 60px 0 50px
+    &__logo
+      width 149px
+      display block
+      margin-bottom 30px

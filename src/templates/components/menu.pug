@@ -1,6 +1,6 @@
 -
   var menuList = [
-    {title: 'Мужчины', url: '#'},
+    {title: 'Мужчины', url: pages.catalogueMen.url},
     {title: 'Женщины', url: '#'},
     {title: 'Дети', url: '#'},
     {title: 'Новости', url: '#'},
@@ -17,9 +17,8 @@ mixin menu(menuList, urls)
           span.__icon._lvl_1.icon.icon-angle-right
         if item.submenu
           .__submenu._lvl_1
-            .container-fluid
-              each itemInner in item.submenu
-                .-menu.__item._lvl_2(class={_submenu: itemInner.submenu} class={_current: itemInner.url === urls[1]})
-                  a.__btn._lvl_2(href= itemInner.url)
-                    span.__label._lvl_2= itemInner.title
-                    span.__icon._lvl_2
+            each itemInner in item.submenu
+              .__item._lvl_2(class={_submenu: itemInner.submenu} class={_current: itemInner.url === urls[1]})
+                a.__btn._lvl_2(href= itemInner.url)
+                  span.__label._lvl_2= itemInner.title
+                  span.__icon._lvl_2

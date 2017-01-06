@@ -1,8 +1,34 @@
+include menu-foot
+include social
+
 mixin footer()
   // Footer
   footer.-footer&attributes(attributes)
     .__top
       .container-fluid
-        nav.-menu-foot
-
+        .row
+          .col-md-3.hidden-xs.hidden-sm
+            +img('img/logo-sm.png', pkg.name).-footer.__logo
+            p Сайт носит информационный характер. Окончательную стоимость и наличие продукции уточняйте в наших фирменных магазинах
+          +menu-foot(menuFootList).col-sm-8.col-md-6
+          .col-sm-4.col-md-3
+            .-footer.__title.hidden-xs Мы в соцсетях
+            +social.hidden-xs
+            .-payment-systems
+              .__item
+                +img('files/pics/payment-systems/VisaLogo.png', 'Visa').__img
+              .__item
+                +img('files/pics/payment-systems/MasterCardLogo.png', 'MasterCard').__img
+              .__item
+                +img('files/pics/payment-systems/paypal_logo.png', 'PayPal').__img
+            +a('#').-to-top-btn.icon.icon-circle-arrow.hidden-xs
+    .__bottom
+      .container-fluid
+        +social.hidden-sm.hidden-md.hidden-lg
+        .row
+          .-footer.__copyright.col-sm-6
+            p 2016 &copy; MASTER JEANS. Все права защищены.
+          .-footer.__developer.col-sm-6
+            p Разработка сайта &mdash; #[a(href='//magwai.ru' target='_blank') Магвай]
+        +a('#').-to-top-btn.icon.icon-circle-arrow.hidden-sm.hidden-md.hidden-lg
   // /Footer
