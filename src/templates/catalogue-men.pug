@@ -5,6 +5,8 @@ include components/header
 include components/content
 include components/footer
 
+include components/breadcrumbs
+
 +doctype(pages.catalogueMen.title)
   .-wrapper
     +header([pages.catalogueMen.url])
@@ -12,6 +14,9 @@ include components/footer
       section.-section
         header.__header
           .container-fluid
-            h2.-section.__title._text_left Каталог Одежды для мужчин
-
+            .row
+              .col-sm-6
+                h2.-section.__title._text_left Каталог Одежды для мужчин
+              .col-sm-6
+                +breadcrumbs([pages.index, {title: 'Мужчины', url: pages.catalogueMen.url}])
     +footer

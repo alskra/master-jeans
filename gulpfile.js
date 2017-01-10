@@ -117,7 +117,7 @@ gulp.task('check-for-favicon-update', function(done) {
     });
 });
 
-function getDepsObj(file) {
+function getDepsObjFn(file) {
     Array.isArray(depsObj[file.stem]) ? depsObj[file.stem].splice(0, depsObj[file.stem].length) : depsObj[file.stem] = [];
     var parser = new htmlparser.Parser({
         onopentag: function(name, attribs){
@@ -134,7 +134,7 @@ function getDepsObj(file) {
     return file;
 }
 
-gulp.task('deps', function (done) {
+gulp.task('getDepsArr', function (done) {
     var arr = [];
     depsArr.splice(0, depsArr.length);
     for (var prop in depsObj) if (depsObj.hasOwnProperty(prop)){
@@ -152,7 +152,7 @@ gulp.task('deps', function (done) {
     done();
 });
 
-gulp.task('html', gulp.series(function() {
+gulp.task('html', gulp.series(function getDepsObj() {
     return combiner(
         gulp.src(['src/templates/**/*.pug', '!src/templates/{helpers,components}/**/*.*']),
         gulpIf(global.isWatch, emittyPug.stream(global.emittyChangedFile)),
@@ -172,7 +172,7 @@ gulp.task('html', gulp.series(function() {
             }),
             require('posthtml-bem')()
         ]),
-        map(function (file, cb) {cb(null, getDepsObj(file));}),
+        map(function (file, cb) {cb(null, getDepsObjFn(file));}),
         debug({title: 'HTML'}),
         gulp.dest('public/')
     ).on('error', notify.onError(function(err) {
@@ -181,7 +181,7 @@ gulp.task('html', gulp.series(function() {
             message: err.message
         }
     }));
-}, 'deps'));
+}, 'getDepsArr'));
 
 gulp.task('css', function() {
     var deps = JSON.parse(fs.readFileSync(depsData));
@@ -193,9 +193,9 @@ gulp.task('css', function() {
     return combiner(
         gulp.src(depsCss.concat(depsArr.map(function (dep) {return path.join(dep, '**/*.styl');})))
             .on('data', function (file) {
-                console.log(file.basename + ': ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
+                //console.log(file.basename + ': ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
             }).on('end', function (file) {
-            console.log('gulp.src END: ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
+            //console.log('gulp.src END: ' + ((new Date()).getSeconds() + (new Date()).getMilliseconds()/1000));
         }),
         gulpIf(isDevelopment, sourcemaps.init()),
         fStyl,
@@ -378,14 +378,19 @@ gulp.parallel('html', 'fonts', 'fontawesome', 'glyphicons', 'files'), 'img', gul
 gulp.task('watch', function() {
     global.isWatch = true;
 
-    watch('src/templates/**/*.pug', gulp.series('html', 'img', gulp.parallel('css', 'js:main')))
-        .on('all', function(event, filepath) {
-            global.emittyChangedFile = filepath;
-            console.log('emittyChangedFile: ' + global.emittyChangedFile);
-        })
-        .on('unlink', function (filepath) {
-            delete depsObj[path.parse(filepath).name];
-        });
+    watch('src/templates/**/*.pug', function (file) {
+        global.emittyChangedFile = 'src/templates/' + file.relative;
+        console.log('emittyChangedFile: ' + global.emittyChangedFile);
+        if (file.event === 'unlink') delete depsObj[file.stem];
+        gulp.series('html', 'img', gulp.parallel('css', 'js:main'))();
+    });
+        //.on('all', function(event, filepath) {
+            //global.emittyChangedFile = filepath;
+            //console.log('emittyChangedFile: ' + global.emittyChangedFile);
+        //})
+        //.on('unlink', function (filepath) {
+            //delete depsObj[path.parse(filepath).name];
+        //});
     watch(['src/**/*.{css,styl}', 'app_components/**/*.{css,styl}'], gulp.series('css'));
     watch(['src/**/*.js', 'app_components/**/*.js'], gulp.series('js'));
     watch(JSON.parse(fs.readFileSync(depsData)).levels.map(function (dep) {return path.join(dep, '**/*.{png,jpg,gif,svg}');}), gulp.series('img'));
@@ -406,7 +411,7 @@ gulp.task('serve', function() {
         logPrefix: 'AlSKra'
     });
 
-    browserSync.watch('public/**/*.*').on('change', browserSync.reload);
+    watch('public/**/*.*', browserSync.reload);//.on('change', browserSync.reload);
 });
 
 gulp.task('zip', function () {

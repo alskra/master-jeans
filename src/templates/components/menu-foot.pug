@@ -16,6 +16,7 @@
   ];
 
 mixin menu-foot(menuFootList)
+  // Menu-foot
   nav.-menu-foot&attributes(attributes)
     each item in menuFootList
       .__item._lvl_1(class={_submenu: item.submenu})
@@ -29,3 +30,4 @@ mixin menu-foot(menuFootList)
                 a.__btn._lvl_2(href= itemInner.url)
                   span.__label._lvl_2= itemInner.title
                   span.__icon._lvl_2(class={'icon icon-angle-right': !itemInner.submenu})
+  // /Menu-foot
