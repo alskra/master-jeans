@@ -1,0 +1,30 @@
+.nav-catalog-wrap
+  margin -30px 0 30px
+  background url("nav-catalog-wrap-bg.jpg") repeat 0 0
+
+  @media (min-width $screen-sm-min)
+    position relative
+    &_men
+      &:after
+        content ''
+        position absolute
+        top 0
+        left 50%
+        right 0
+        bottom 0
+        margin-left -114px
+        background url("nav-catalog-wrap-men.jpg") no-repeat 50% 50%/cover
+    .nav-catalog
+      width 50%
+      padding-right 114px + 20px
+
+  @media (min-width $screen-md-min)
+    margin -45px 0 45px
+    min-height 455px
+    &_men
+      &:after
+        margin-left -45px
+    .nav-catalog
+      padding-right 45px + 20px
+
+
