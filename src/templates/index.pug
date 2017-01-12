@@ -14,7 +14,7 @@ include components/writes-list
     +content
       // Main Slider
       .-main-slider.slick-slider(data-slick={"autoplay": true, "autoplaySpeed": 7000})
-        .__item.slick-slide.loading_before
+        .__item.slick-slide.loading.loading_before
           .__img-wrap
             +img(null, null, 'fit')(data-lazy='files/pics/main-slider/slide-1.jpg').__img
           .__text
@@ -29,7 +29,7 @@ include components/writes-list
           .__img-wrap.hidden-xs.hidden-sm
             +img(null, null, 'fit')(data-lazy='files/pics/main-slider/slide-2.jpg').__img
 
-        .__item.slick-slide.loading_before
+        .__item.slick-slide.loading.loading_before
           .__img-wrap
             +img(null, null, 'fit')(data-lazy='files/pics/main-slider/slide-3.jpg').__img
           .__text

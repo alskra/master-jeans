@@ -7,28 +7,26 @@ include components/footer
 
 include components/breadcrumbs
 
-+doctype(pages.catalogueMen.title)
++doctype(pages.catalogueKids.title)
   .-wrapper
-    +header([pages.catalogueMen.url])
+    +header([pages.catalogueKids.url])
     +content
       section.-section._catalogue
         header.__header
           .container-fluid
             .row
               .col-sm-6
-                h1.-section.__title._text_left Каталог Одежды для мужчин
+                h1.-section.__title._text_left Каталог Одежды для детей
               .col-sm-6
-                +breadcrumbs([pages.index, {title: 'Мужчины', url: pages.catalogueMen.url}])
-        .-nav-catalog-wrap._men
+                +breadcrumbs([pages.index, {title: 'Дети', url: pages.catalogueKids.url}])
+        .-nav-catalog-wrap._kids
           .container-fluid
             nav.-nav-catalog
               -
-                var arrNav = ['Аксессуары', 'Активная Одежда', 'Белье', 'Брюки', 'Джемперы', 'Джинсы',
-                'Зимние аксессуары', 'Зимняя одежда', 'Коллекция Marvel', 'Обувь', 'Пиджаки', 'Ремни', 'Свитера',
-                'Сорочки', 'Футболки и поло', 'Школьная форма', 'Шорты']
+                var arrNav = ['Мальчики 0–7 год', 'Мальчики от 7 лет', 'девочки 0–7 лет', 'девочки от 7 лет']
               each item, index in arrNav
                 .__item
-                  +a('catalogue-view.html').__label= item
+                  +a().__label= item
         .container-fluid
           p.
             Стильные джинсы – самые популярные вид мужских брюк за последнюю сотню лет. Они удобные и практичные. Из рабочей одежды они давно превратились в одежду для повседневной носки и активного отдыха. Их любят за прочный и мягкий материал, который позволяет выполнять на своей поверхности всевозможные винтажные эффекты, потертости и переходы от одного оттенка к другому. Модные джинсы в магазинах Gloria Jeans не являются исключением, в магазинах представлены джинсы разнообразных стилей, кроя и расцветок.

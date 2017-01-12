@@ -22,50 +22,58 @@
 }
 
 
-.icon-angle-right-2:before {
+.icon-angle-down:before {
   content: "\E001";
 }
 
-.icon-angle-right:before {
+.icon-angle-right-2:before {
   content: "\E002";
 }
 
-.icon-circle-arrow:before {
+.icon-angle-right:before {
   content: "\E003";
 }
 
-.icon-delivery:before {
+.icon-circle-arrow:before {
   content: "\E004";
 }
 
-.icon-fb:before {
+.icon-delivery:before {
   content: "\E005";
 }
 
-.icon-guarantee:before {
+.icon-fb:before {
   content: "\E006";
 }
 
-.icon-hanger:before {
+.icon-guarantee:before {
   content: "\E007";
 }
 
-.icon-ins:before {
+.icon-hanger:before {
   content: "\E008";
 }
 
-.icon-minus:before {
+.icon-ins:before {
   content: "\E009";
 }
 
-.icon-plus:before {
+.icon-minus:before {
   content: "\E00A";
 }
 
-.icon-sale:before {
+.icon-plus:before {
   content: "\E00B";
 }
 
-.icon-tw:before {
+.icon-refresh:before {
   content: "\E00C";
+}
+
+.icon-sale:before {
+  content: "\E00D";
+}
+
+.icon-tw:before {
+  content: "\E00E";
 }

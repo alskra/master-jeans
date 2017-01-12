@@ -16,11 +16,18 @@
     background linear-gradient($red-1, $red-1) no-repeat 50% 100%/46px 1px
     position relative
     z-index 2
+    width 100%
     &_text
       &_left
         text-align left
         background-position 0% 100%
 
-  @media (min-width $screen-md-min)
+  @media (min-width $screen-sm-min)
+    padding 40px 0
     &__header
-      margin-bottom 45px
+      margin -40px 0 40px
+      .row
+        display flex
+      [class^='col-']
+        float none
+        display flex

@@ -25,6 +25,6 @@ $(function () {
             }
         ]
     }).on('lazyLoaded', function (event, slick, image, imageSource) {
-        $(image).closest('.slick-slide').removeClass('loading_before');
+        $(image).closest('.slick-slide').removeClass('loading loading_before');
     });
 });

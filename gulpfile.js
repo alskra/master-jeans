@@ -379,7 +379,7 @@ gulp.task('watch', function() {
     global.isWatch = true;
 
     watch('src/templates/**/*.pug', function (file) {
-        global.emittyChangedFile = 'src/templates/' + file.relative;
+        global.emittyChangedFile = 'src/templates/' + path.posix.normalize(file.relative);
         console.log('emittyChangedFile: ' + global.emittyChangedFile);
         if (file.event === 'unlink') delete depsObj[file.stem];
         gulp.series('html', 'img', gulp.parallel('css', 'js:main'))();
@@ -405,13 +405,13 @@ gulp.task('serve', function() {
         server: {
             baseDir: 'public/'
         },
-        tunnel: true,
+        tunnel: false,
         host: 'localhost',
         port: 3000,
         logPrefix: 'AlSKra'
     });
 
-    watch('public/**/*.*', browserSync.reload);//.on('change', browserSync.reload);
+    browserSync.watch('public/**/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('zip', function () {

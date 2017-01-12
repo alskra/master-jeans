@@ -1,0 +1,48 @@
+-
+  var menuCatalogueList = [
+    {title: 'Аксессуары', url: voidHref},
+    {title: 'Активная Одежда', url: voidHref},
+    {title: 'Белье', url: voidHref},
+    {title: 'Брюки', url: voidHref},
+    {title: 'Джемперы', url: voidHref},
+    {title: 'Джинсы', url: pages.catalogueView.url, submenu: [
+      {title: 'Regular Fit', url: voidHref},
+      {title: 'С пятью карманами', url: voidHref}
+    ]},
+    {title: 'Зимние аксессуары', url: voidHref, submenu: [
+      {title: 'Подкатегория', url: voidHref},
+      {title: 'Подкатегория', url: voidHref}
+    ]},
+    {title: 'Зимняя одежда', url: voidHref, submenu: [
+      {title: 'Подкатегория', url: voidHref},
+      {title: 'Подкатегория', url: voidHref}
+    ]},
+    {title: 'Коллекция Marvel', url: voidHref},
+    {title: 'Обувь', url: voidHref},
+    {title: 'Пиджаки', url: voidHref},
+    {title: 'Ремни', url: voidHref},
+    {title: 'Свитера', url: voidHref},
+    {title: 'Сорочки', url: voidHref},
+    {title: 'Футболки и поло', url: voidHref},
+    {title: 'Школьная форма', url: voidHref},
+    {title: 'Шорты', url: voidHref}
+  ];
+
+mixin menu-catalogue(menuCatalogueList, urls)
+  // Menu-catalogue
+  nav.-menu-catalogue&attributes(attributes)
+    each item in menuCatalogueList
+      .__item._lvl_1(class={_submenu: item.submenu} class={'_current _opened': item.url === urls[0]})
+        a.__btn._lvl_1(href= item.url)
+          span.__label._lvl_1= item.title
+          if item.submenu
+            span.__icon._lvl_1.icon.icon-angle-down
+        if item.submenu
+          .__submenu._lvl_1(style=item.url === urls[0] ? {display: 'block'} : null)
+            each itemInner in item.submenu
+              .__item._lvl_2(class={_submenu: itemInner.submenu} class={_current: itemInner.url === urls[1]})
+                a.__btn._lvl_2(href= itemInner.url)
+                  span.__label._lvl_2= itemInner.title
+                  if itemInner.submenu
+                    span.__icon._lvl_2.icon.icon-angle-down
+  // /Menu-catalogue

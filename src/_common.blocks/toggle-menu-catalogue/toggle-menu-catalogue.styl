@@ -1,0 +1,60 @@
+.toggle-menu-catalogue
+  padding 0
+  margin 0 (-($grid-gutter-width))
+  border 0
+  border-bottom 1px solid #ececec
+  background white
+  width calc(100% + 40px)
+  height 42px
+  font-weight 500
+  font-size 12px
+  text-transform uppercase
+  line-height 41px
+  color $red-1
+  position relative
+  text-align left
+  transition 0.15s
+  &:active
+    transition none
+    background-color #f3f3f3
+  &__icon
+    flex none
+    display inline-flex
+    vertical-align top
+    flex-flow column
+    justify-content center
+    size 41px 41px
+  &__line
+    size 17px 1px
+    background $red-1
+    transition 0.2s linear
+    transform-origin 50% 50%
+    display block
+    margin 0 auto
+    pointer-events none
+    &+&
+      margin-top 6px
+  &__label
+    display inline-flex
+    vertical-align top
+    overflow hidden
+    margin-right 20px
+  &:focus
+    outline 0
+  &_opened
+    background-color #f3f3f3
+    & {$p}__line
+      width 21px
+      &:nth-child(1)
+        transform rotate(45deg)
+      &:nth-child(2)
+        opacity 0
+        margin -1px auto -7px
+      &:nth-child(3)
+        transform rotate(-45deg)
+
+  @media (min-width $screen-sm-min)
+    border 0
+    height 41px
+    margin 0
+    width 100%

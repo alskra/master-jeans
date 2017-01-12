@@ -1,0 +1,149 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+include components/menu-catalogue
+include components/products-list
+
++doctype(pages.itemView.title)
+  .-wrapper
+    +header([pages.catalogueMen.url, pages.catalogueView.url, pages.itemView.url])
+    +content
+      section.-section._catalogue
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-6
+                h1.-section.__title._text_left Каталог Джинсов для мужчин
+              .col-sm-6
+                +breadcrumbs([pages.index, {title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}, {title: 'Джинсы мужские Levi\'s 511', url: pages.itemView.url}])
+        .container-fluid
+          .row
+            aside.-aside-catalogue.col-sm-3
+              h2.-title.hidden-xs.hidden-sm.hidden-md.hidden-lg Категории
+              button(type='button').-toggle-menu-catalogue
+                span.__icon
+                  span.__line
+                  span.__line
+                  span.__line
+                span.__label Категории
+              +menu-catalogue(menuCatalogueList, [pages.catalogueView.url])
+            .col-sm-9
+
+        article.-product-card
+          .container-fluid
+            .-product-card.__col._1
+              .__brand
+                +img('files/pics/brands/Levi\'s_logo.png', 'Levi\'s').__brand-img
+              h2.__title Джинсы мужские Levi's 511
+              .__price-box
+                .__price._new 8&nbsp;500&nbsp;#[span.fa.fa-rub]
+                .__price._old 8&nbsp;900&nbsp;#[span.fa.fa-rub]
+            .-product-card.__col._2
+              .-gallery-slider
+                .__view
+                  .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='XL')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892115_2_v1.jpg').__view-img
+                  .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='L')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892116_3_v1.jpg').__view-img
+                  .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='L')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892117_4_v1.jpg').__view-img
+                  .slick-slide.loading.loading_before(data-color='#000000' data-size='XXL')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892114_1_v1.jpg').__view-img
+                  .slick-slide.loading.loading_before(data-color='#000000' data-size='XL')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892115_2_v1.jpg').__view-img
+                  .slick-slide.loading.loading_before(data-color='#000000' data-size='XL')
+                    .-gallery-slider.__view-item
+                      +img(null, null, 'fit', 'contain')(data-lazy='files/pics/products/TO030EMMTF47_3892116_3_v1.jpg').__view-img
+
+                .__thumb.hidden-xs.hidden-sm
+                  .__thumb-inner
+                    .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='XL')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892115_2_v1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='L')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892116_3_v1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before(data-color='#4a5e84' data-size='L')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892117_4_v1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before(data-color='#000000' data-size='XXL')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892114_1_v1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before(data-color='#000000' data-size='XL')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892115_2_v1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before(data-color='#000000' data-size='XL')
+                      .-gallery-slider.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/products/TO030EMMTF47_3892116_3_v1.jpg').__thumb-img
+
+
+            .-product-card.__col._1
+              // Фильтрация фото в слайдере по data-атрибутам для цвета и по value для размера, изначально в слайдере ВСЕ фото
+              .__character-row
+                span.__label Цвет:
+                .-color-item(data-color='#4a5e84')
+                  span.__icon(style={'background-color': '#4a5e84'})
+                  span.__label Синий
+                .-color-item(data-color='#000000')
+                  span.__icon(style={'background-color': '#000000'})
+                  span.__label Чёрный
+              .__character-row
+                label.__label Размеры:
+                  select.-select._size(data-linkcustomclass='field field_select' data-ddcustomclass='select-dd')
+                    option(value='all') Выберите размер из списка
+                    option(value='L') L
+                    option(value='XL') XL
+                    option(value='XXL') XXL
+
+
+
+          .container-fluid
+            .-tabs
+              .__separator.hidden-xs
+              +a().__btn(data-toggle='tab')
+                .__label Описание
+                .__icon
+              .__item.product-card.product-card__description
+                  .row
+                    .col-md-8
+                      ul.-ul-list
+                        li Состав #[span.black-1 Хлопок - 99%, Эластан - 1%]
+                        li Длина по боковому шву #[span.black-1 108 см]
+                        li Длина по внутреннему шву #[span.black-1 80 см]
+                        li Высота #[span.black-1 26 см]
+                        li Посадка #[span.black-1 Slim Fit]
+                        li Застежка #[span.black-1 на пуговицах]
+                        li Цвет #[span.black-1 синий]
+                        li Страна производства #[span.black-1 Камбоджа]
+                        li Сезон #[span.black-1 Мульти]
+                        li Стиль #[span.black-1 Повседневный]
+                        li Коллекция #[span.black-1 Осень-зима]
+                        li Узор #[span.black-1 Однотонный]
+                        li Потертость #[span.black-1 Без потертостей]
+                        li Тип джинс/брюк #[span.black-1 зауженные]
+                        li Карманы #[span.black-1 5]
+                        li Артикул #[span.black-1 TO030EMMTF47]
+
+                    .col-md-4
+                      .-product-card.__description-text
+                        p.black-1.
+                          Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы. Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
+
+              +a().__btn(data-toggle='tab')
+                .__label Отзывы к товару #[strong (2)]
+                .__icon
+              .__item.product-card.product-card__reviews
+                p.black-1.
+                  Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы. Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
+
+    +footer

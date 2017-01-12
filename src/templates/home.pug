@@ -10,7 +10,7 @@ include components/doctype
           h1.-page.__title #{pkg.name}
             small &nbsp;#{pkg.version}&nbsp;
               +a('../dist/' + pkg.name.toLowerCase() + '-' + pkg.version + '.zip') Download ZIP
-  main
+  main.__content
     .container-fluid
       .row
         .col-sm-4.col-sm-offset-2
@@ -26,3 +26,7 @@ include components/doctype
             each modal, index in modals
               li
                 +a(modal.url)(data-toggle='modal-ajax') #{modal.title} #[small (#{modal.url})]
+  footer.__footer
+    div &nbsp;
+    div &nbsp;
+    div &nbsp;

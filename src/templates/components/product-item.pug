@@ -1,10 +1,10 @@
 mixin product-item(item)
   article.-product-item&attributes(attributes)
-    +a().__img-wrap
+    +a(pages.itemView.url).__img-wrap
       +img(item.img, item.title, 'fit').__img
       .__overlay
         button(type='button').__btn-view.btn.btn_type_2 #[span.btn__label Подробнее]
     h2.__title
-      +a().__title-link= item.title
+      +a(pages.itemView.url).__title-link= item.title
     .__price-box!= Array.isArray(item.price) ? '<span class="__price _new">' + item.price[0] + '&nbsp;<span class="fa fa-rub"></span></span> <span class="__price _old">' + item.price[1] + '&nbsp;<span class="fa fa-rub"></span></span>' : '<span class="__price">' + item.price + '&nbsp;<span class="fa fa-rub"></span></span>'
 
