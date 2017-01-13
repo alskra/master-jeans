@@ -1,0 +1,48 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+
++doctype(pages.newView.title)
+  .-wrapper
+    +header([pages.news.url, pages.newView.url])
+    +content
+      section.-section._catalogue
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Новости
+              .col-sm-7
+                +breadcrumbs([{title: 'Новости', url: pages.news.url}, {title: 'Wrangler применил инновационные технологии для «спортивных джинсов»', url: pages.newView.url}])
+        article.-write-view
+          .container-fluid
+            header.-write-view.__header
+              time(datetime='2016-11-03').__date 03.11.2016
+              h2.__title Wrangler применил инновационные технологии для «спортивных джинсов»
+            p.
+              Компания Wrangler выпустила новую коллекцию одежды. Об этом сообщается в пресс-релизе, поступившем в редакцию «Ленты.ру» в понедельник, 25 апреля.
+              Линейка получила название Active Ready.
+            p.
+              В нее вошли так называемые «спортивные джинсы». По словам производителей, они выглядят будто сделаны из денима,
+              но на самом деле сшиты из трикотажной ткани с применением инновационных технологий. Модель представлена в нескольких вариантах:
+              как с поясом на шнуровке, так и в классическом виде — с пятью карманами.
+            p.
+              Бренд Wrangler зарегистрирован в 1947 году, специализируется на производстве джинсовой одежды.
+              Фирма принадлежит текстильной корпорации VF Corporation.
+            p.
+              В середине марта еще один производитель джинсовой одежды — Levis — представил документальный фильм о самой популярной модели марки джинсах 501.
+              Лента посвящена истории модели и ее влиянию на разные стороны жизни, от трудовой этики до культуры.
+              В фильме снялись, в частности, топ-модель Эрин Уоссон, гитарист группы Sonic Youth Ли Ранальдо,
+              фэшн-блогер и фотограф Скотт Шуман, ресторатор Эдди Хуан и дизайнер Даррен Романелли.
+        footer.__footer
+          .container-fluid
+            .-section.__footer-inner
+              +a().-nav-link._prev #[span.__icon.icon.icon-angle-right-2]#[span.__label.hidden-sm.hidden-md.hidden-lg Назад]#[span.__label.hidden-xs Предыдущая новость]
+              +a().-nav-link._next #[span.__label.hidden-sm.hidden-md.hidden-lg Вперёд]#[span.__label.hidden-xs Следующая новость]#[span.__icon.icon.icon-angle-right-2]
+
+    +footer

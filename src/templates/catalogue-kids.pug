@@ -15,10 +15,10 @@ include components/breadcrumbs
         header.__header
           .container-fluid
             .row
-              .col-sm-6
+              .col-sm-5
                 h1.-section.__title._text_left Каталог Одежды для детей
-              .col-sm-6
-                +breadcrumbs([pages.index, {title: 'Дети', url: pages.catalogueKids.url}])
+              .col-sm-7
+                +breadcrumbs([{title: 'Дети', url: pages.catalogueKids.url}])
         .-nav-catalog-wrap._kids
           .container-fluid
             nav.-nav-catalog

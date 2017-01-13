@@ -1,0 +1,62 @@
+.faq-item
+  p
+    &:last-child
+      margin 0
+  &__header
+    display flex
+    align-items flex-start
+    font-size 16px
+    line-height 1.25em
+    padding 15px 0
+    cursor pointer
+    &:hover, &:focus
+      & {$p}__title
+        color $red-1
+      & {$p}__icon
+        color $red-1
+  &__title
+    color #2c2c2c
+    font-weight 500
+    font-size 16px
+    line-height inherit
+    text-transform uppercase
+    overflow hidden
+    flex 1 1 auto
+    margin 0
+    transition 0.2s
+    order 1
+  &__icon
+    width 17px
+    height 17px
+    flex none
+    position relative
+    color #333
+    margin-right 15px
+    transition inherit
+    &:before, &:after
+      content ''
+      position absolute
+      width 17px
+      border-top 1px solid
+      top 50%
+      left 0
+      border-radius 1px
+      transition inherit
+    &:after
+      transform rotate(90deg)
+  &__content
+    display none
+    padding 25px 0
+  &_opened
+    & {$p}__header
+      background linear-gradient(#bd212c, #bd212c) no-repeat 0% 100%/46px 1px
+    & {$p}__title
+      color $red-1
+    & {$p}__icon
+      color $red-1
+      &:after
+        transform rotate(0deg)
+
+  @media (min-width $screen-md-min)
+    &__header
+      //max-width 960px

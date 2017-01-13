@@ -1,8 +1,13 @@
 mixin write-item-2(item)
   article.-write-item-2&attributes(attributes)
-    +a().__img-wrap
+    +a('new-view.html').__img-wrap
       +img(item.img, item.title, 'fit').__img
-    h2.__title
-      +a().__title-link= item.title
-    footer.__footer
-      +a().__read-more Читать далее #[span.icon.icon-angle-right-2]
+    .__col-right
+      header.__header
+        h2.__title.dot-ellipsis.dot-resize-update
+          +a('new-view.html').__title-link= item.title
+        time(datetime='ГГГГ-ММ-ДД').__date 03.11.2016
+      .__content.dot-ellipsis.dot-resize-update
+        p= item.caption
+      footer.__footer
+        +a('new-view.html').__read-more Читать далее#[span.icon.icon-angle-right-2]

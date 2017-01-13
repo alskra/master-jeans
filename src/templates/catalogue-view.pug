@@ -17,10 +17,10 @@ include components/products-list
         header.__header
           .container-fluid
             .row
-              .col-sm-6
+              .col-sm-5
                 h1.-section.__title._text_left Каталог Джинсов для мужчин
-              .col-sm-6
-                +breadcrumbs([pages.index, {title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}])
+              .col-sm-7
+                +breadcrumbs([{title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}])
         .container-fluid
           .row
             aside.-aside-catalogue.col-sm-3

@@ -17,10 +17,10 @@ include components/products-list
         header.__header
           .container-fluid
             .row
-              .col-sm-6
+              .col-sm-5
                 h1.-section.__title._text_left Каталог Джинсов для мужчин
-              .col-sm-6
-                +breadcrumbs([pages.index, {title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}, {title: 'Джинсы мужские Levi\'s 511', url: pages.itemView.url}])
+              .col-sm-7
+                +breadcrumbs([{title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}, {title: 'Джинсы мужские Levi\'s 511', url: pages.itemView.url}])
         .container-fluid
           .row
             aside.-aside-catalogue.col-sm-3
@@ -134,16 +134,45 @@ include components/products-list
                         li Карманы #[span.black-1 5]
                         li Артикул #[span.black-1 TO030EMMTF47]
 
-                    .col-md-4
-                      .-product-card.__description-text
-                        p.black-1.
-                          Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы. Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
+                    .col-md-4.black-1
+                      p.
+                        Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы.
+                        Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
 
               +a().__btn(data-toggle='tab')
                 .__label Отзывы к товару #[strong (2)]
                 .__icon
               .__item.product-card.product-card__reviews
-                p.black-1.
-                  Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы. Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
+                .row
+                  .col-md-8
+                    article.-review-item
+                      header.__header
+                        .__author-name Алексей Петров
+                        time.__date(datetime='2016-11-02') 2 ноября 2016
+                      .__content
+                        h2.__title Отличные джинсы
+                        p.
+                          Джинсы от Levi’s выполнены из хлопкового денима синего цвета. Модель зауженного кроя застегивается на пуговицы.
+                          Детали: удобная посадка, три кармана спереди и два сзади, шлевки на поясе под ремень, контрастная отстрочка.
+                    article.-review-item
+                      header.__header
+                        .__author-name Оксана Свердлова
+                        time.__date(datetime='2016-10-28') 28 октября 2016
+                      .__content
+                        h2.__title Классно
+                        p.
+                          Nunquam talem particula. Sunt animalises locus fidelis, altus toruses. Pol, a bene heuretes, dexter magister!
+                          Hilotaes mori, tanquam fidelis nutrix. Cum planeta ortum, omnes rumores resuscitabo alter, nobilis animalises.
+                  .col-md-4.black-1
+                    p.
+                      Если вы заказывали этот товар, поделитесь своим впечатлением о нём, и другие покупатели будут вам благодарны.
+                    .-btns-box._type_1
+                      +a('popups/modal-review.html').-btn._type_1(data-toggle='modal-ajax') #[span.__label Оставить отзыв]
 
+        // Recommended
+        section.-section.padding-none-bottom
+          header.__header
+            .container-fluid
+              h2.-section.__title Рекомендуем
+          +products-list(productsList.slice(0, 4))._one-row
     +footer

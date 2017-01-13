@@ -1,0 +1,28 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+include components/writes-list
+include components/writes-list-2
+
++doctype(pages.news.title)
+  .-wrapper
+    +header([pages.news.url])
+    +content
+      section.-section._catalogue
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Новости
+              .col-sm-7
+                +breadcrumbs([{title: 'Новости', url: pages.news.url}])
+        +writes-list-2(writesList)
+        .-btns-box.margin-none-bottom
+          .container-fluid
+            +a().-btn._type_3 #[span.__icon.icon.icon-refresh]#[span.__label Показать ещё]
+    +footer

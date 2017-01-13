@@ -1,0 +1,26 @@
+.nav-link
+  text-decoration none !important
+  font-weight 500
+  font-size 12px
+  line-height 1.25em
+  text-transform uppercase
+  display inline-flex
+  color inherit
+  &:hover, &:focus
+    color $red-1
+  &__label
+    overflow hidden
+  &__icon
+    flex none
+    font-size 10px
+  &_prev
+    float left
+    margin-right 10px
+    &>{$p}__icon
+      margin-right 15px
+      transform rotateY(180deg)
+  &_next
+    float right
+    margin-left 10px
+    &>{$p}__icon
+      margin-left 15px

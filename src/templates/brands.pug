@@ -1,0 +1,113 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+
++doctype(pages.brands.title)
+  .-wrapper
+    +header([pages.brands.url])
+    +content
+      section.-section._catalogue
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Бренды
+              .col-sm-7
+                +breadcrumbs([{title: 'Бренды', url: pages.brands.url}])
+        .-brands-list-2
+          .container-fluid
+            .row
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/Lee.jpg', 'Lee. Америка. 1937', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Lee. Америка. #[br]1937
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/wrangler.jpg', 'Wrangler. Америка. 1920', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Wrangler. Америка. #[br]1920
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/LeeCooper.jpg', 'Lee Cooper. Америка. 1939', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Lee Cooper. Америка. #[br]1939
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/Rifle.jpg', 'Rifle. Америка. 1957', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Rifle. Америка. #[br]1957
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/Gaultier.jpg', 'Gaultier Jeans. Америка. 1988', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Gaultier Jeans. Америка. #[br]1988
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/logo-westland.jpg', 'Westland. Америка. 1930', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Westland. Америка. #[br]1930
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/diesel.png', 'Diesel. Америка. 1992', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Diesel. Америка. #[br]1992
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/PoloLogo.png', 'Polo Jeans Co. Америка. 1976', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Polo Jeans Co. Америка. #[br]1976
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/Liu-jo.png', 'LiU-Jo. Америка. 1980', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title LiU-Jo. Америка. #[br]1980
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/1280px-Levi\'s_logo.png', 'Levi’s. Америка. 1932', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Levi’s. Америка. #[br]1932
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/logo_Pepe-jeans.png', 'Pepe Jeans. Англия. 1948', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Pepe Jeans. Англия. #[br]1948
+              article.-brand-item-2
+                +a('brand-view.html').__inner
+                  .__cols
+                    .__col._1
+                      +img('files/pics/brands-2/DKNY-vector-logo.png', 'Dnky. Америка. 1995', 'fit', 'contain').__img
+                    .__col._2
+                      h2.__title Dnky. Америка. #[br]1995
+
+        .-btns-box.margin-none-bottom
+          .container-fluid
+            +a().-btn._type_3 #[span.__icon.icon.icon-refresh]#[span.__label Показать ещё]
+    +footer
