@@ -42,6 +42,9 @@
   "jquery.ikSelect": {
     "js": "./app_components/jquery.ikSelect/jquery.ikSelect.min.js"
   },
+  "infobox_packed": {
+    "js": "./app_components/infobox_packed/infobox_packed.js"
+  },
   "bootstrap": {
     "css": "./app_components/bootstrap/css/index.styl",
     "js": "./app_components/bootstrap/js/{transition,dropdown,tooltip}.js"
@@ -68,7 +71,8 @@
     "perfect-scrollbar",
     "goodshare",
     "jquery.arcticmodal",
-    "jquery.ikSelect"
+    "jquery.ikSelect",
+    "infobox_packed"
   ],
 
   "levels": ["./src/_common.blocks/"]

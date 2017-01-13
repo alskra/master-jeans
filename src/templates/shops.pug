@@ -1,0 +1,93 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+
++doctype(pages.shops.title)
+  .-wrapper
+    +header([pages.shops.url])
+    +content
+      section.-section
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Магазины
+              .col-sm-7
+                +breadcrumbs([{title: 'Магазины', url: pages.shops.url}])
+
+        // Карта магазинов, параметры карты и список меток задаются через data-map атрибут
+        .-shops-map(data-map={
+            "center": [48.718123, 44.517671],
+            "zoom": 10,
+            "places": [
+                {"coords": [48.636300, 44.435513], "title": "Салон-магазин Wrangler", "url": voidHref},
+                {"coords": [48.514832, 44.541234], "title": "Фирменный магазин Masterjeans", "url": voidHref},
+                {"coords": [48.697109, 44.502394], "title": "Салон-магазин Levi’s", "url": voidHref},
+                {"coords": [48.739288, 44.490811], "title": "Магазин Masterjeans", "url": voidHref}
+            ]
+        })
+        .-writes-list
+          .container-fluid
+            .row
+              article.-write-item-3
+                +a().__img-wrap
+                  +img('files/pics/shops/7ba41a4b86ed7e3d5674632b9a8e3f4b.jpg', 'Салон-магазин Wrangler', 'fit').__img
+                h2.__title
+                  +a().__title-link Салон-магазин Wrangler
+                .__info
+                  .__info-str
+                    | г. Волгоград, просп. Университетский, 1078 #[br]
+                    +a('tel:88442265660') 8(844) 226-56-60
+                    | &nbsp;&#183; Открыто c 9:00 до 22:00
+                  .__info-str
+                    +aMail('wrangler-info@gmail.com')
+                footer.__footer
+                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+              article.-write-item-3
+                +a().__img-wrap
+                  +img('files/pics/shops/a4d764509eec09758c6cf0c99837ddcf.jpg', 'Фирменный магазин Masterjeans', 'fit').__img
+                h2.__title
+                  +a().__title-link Фирменный магазин Masterjeans
+                .__info
+                  .__info-str
+                    | г. Волгоград, просп. Героев Сталинграда, 39 #[br]
+                    +a('tel:88002500890') 8 (800) 250-08-90
+                    | &nbsp;&#183; Открыто c 9:00 до 21:00
+                  .__info-str
+                    +aMail('masterjeans@gmail.com')
+                footer.__footer
+                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+              article.-write-item-3
+                +a().__img-wrap
+                  +img('files/pics/shops/shop-leewrangler.jpg', 'Салон-магазин Levi’s', 'fit').__img
+                h2.__title
+                  +a().__title-link Салон-магазин Levi’s
+                .__info
+                  .__info-str
+                    | г. Волгоград, ул. Рабоче-Крестьянская, 9б #[br]
+                    +a('tel:88002500890') 8 (800) 250-08-90
+                    | &nbsp;&#183; Открыто c 9:00 до 21:00
+                  .__info-str
+                    +aMail('wrangler-info@gmail.com')
+                footer.__footer
+                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+              article.-write-item-3
+                +a().__img-wrap
+                  +img('files/pics/shops/9709c306d8dbb944a6316542f1e063fd.jpg', 'Магазин Masterjeans', 'fit').__img
+                h2.__title
+                  +a().__title-link Магазин Masterjeans
+                .__info
+                  .__info-str
+                    | г. Волгоград, просп. Маршала Жукова, 101 #[br]
+                    +a('tel:88005505858') 8 (800) 550-58-58
+                    | &nbsp;&#183; Открыто c 10:00 до 20:00
+                  .__info-str
+                    +aMail('masterjeans@gmail.com')
+                footer.__footer
+                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+    +footer
