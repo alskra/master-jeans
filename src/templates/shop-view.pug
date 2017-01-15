@@ -1,0 +1,97 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+
++doctype(pages.shopView.title)
+  .-wrapper
+    +header([pages.shops.url, pages.shopView.url])
+    +content
+      section.-section
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Фирменный магазин Masterjeans
+              .col-sm-7
+                +breadcrumbs([{title: 'Магазины', url: pages.shops.url}, {title: 'Фирменный магазин Masterjeans', url: pages.shopView.url}])
+
+        // Карта магазинов, параметры карты и список меток задаются через data-map атрибут
+        .-shops-map(data-map={
+            "center": [48.514832, 44.541234],
+            "zoom": 10,
+            "places": [
+                {"coords": [48.636300, 44.435513], "title": "Салон-магазин Wrangler", "url": "shop-view.html"},
+                {"coords": [48.514832, 44.541234], "title": "Фирменный магазин Masterjeans", "url": "shop-view.html"},
+                {"coords": [48.697109, 44.502394], "title": "Салон-магазин Levi’s", "url": "shop-view.html"},
+                {"coords": [48.739288, 44.490811], "title": "Магазин Masterjeans", "url": "shop-view.html"}
+            ]
+        })
+
+        .-contacts-box
+          .container-fluid
+            section.-contacts-box.__col._1.section
+              header.section__header
+                h2.section__title Фирменный магазин Masterjeans
+              .__addr
+                p г. Волгоград, просп. Героев Сталинграда, 398 #[br]
+                p (800) 250-08-90, 250-08-91 #[br]
+                p masterjeans@gmail.com #[br]
+                p Открыто c 9:00 до 21:00, без перерывов и выходных
+              p.
+                Компания Wrangler выпустила новую коллекцию одежды. Об этом сообщается в пресс-релизе, поступившем в редакцию «Ленты.ру» в понедельник, 25 апреля. Линейка получила название Active Ready.
+
+              .-gallery-slider-2
+                .__view
+                  .slick-slide.loading.loading_before
+                    .-gallery-slider-2.__view-item
+                      +img(null, null, 'fit')(data-lazy='files/pics/shops/shop-leewrangler1.jpg').__view-img
+                  .slick-slide.loading.loading_before
+                    .-gallery-slider-2.__view-item
+                      +img(null, null, 'fit')(data-lazy='files/pics/shops/shop.jpg').__view-img
+
+                .__thumb
+                  .__thumb-inner
+                    .slick-slide.loading.loading_before
+                      .-gallery-slider-2.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/shops/shop-leewrangler1.jpg').__thumb-img
+                    .slick-slide.loading.loading_before
+                      .-gallery-slider-2.__thumb-item
+                        +img(null, null, 'fit')(data-lazy='files/pics/shops/shop.jpg').__thumb-img
+
+            section.-contacts-box.__col._2.section
+              header.section__header
+                h2.section__title Написать письмо
+              form(action='').-form-feedback
+                .-row-form
+                  label
+                    span.-row-form.__label Тема письма *
+                    select.-select(data-linkcustomclass='field field_select')
+                      option Качество обслуживания
+                      option Стоимость
+                      option Другое
+                .-row-form
+                  label
+                    .-row-form.__label Ваше имя *
+                    input.-field(type='text')
+                .-row-form
+                  label
+                    .-row-form.__label E-mail *
+                    input.-field(type='email')
+                .-row-form
+                  label
+                    .-row-form.__label Телефон
+                    input.-field(type='tel')
+                .-row-form
+                  label
+                    .-row-form.__label Текст вашего письма *
+                    textarea.-field._area
+                .-row-form._btn
+                  button.-btn._type_1(type='submit') #[span.__label Отправить]
+
+
+    +footer

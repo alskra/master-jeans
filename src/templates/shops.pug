@@ -25,20 +25,20 @@ include components/breadcrumbs
             "center": [48.718123, 44.517671],
             "zoom": 10,
             "places": [
-                {"coords": [48.636300, 44.435513], "title": "Салон-магазин Wrangler", "url": voidHref},
-                {"coords": [48.514832, 44.541234], "title": "Фирменный магазин Masterjeans", "url": voidHref},
-                {"coords": [48.697109, 44.502394], "title": "Салон-магазин Levi’s", "url": voidHref},
-                {"coords": [48.739288, 44.490811], "title": "Магазин Masterjeans", "url": voidHref}
+                {"coords": [48.636300, 44.435513], "title": "Салон-магазин Wrangler", "url": "shop-view.html"},
+                {"coords": [48.514832, 44.541234], "title": "Фирменный магазин Masterjeans", "url": "shop-view.html"},
+                {"coords": [48.697109, 44.502394], "title": "Салон-магазин Levi’s", "url": "shop-view.html"},
+                {"coords": [48.739288, 44.490811], "title": "Магазин Masterjeans", "url": "shop-view.html"}
             ]
         })
         .-writes-list
           .container-fluid
             .row
               article.-write-item-3
-                +a().__img-wrap
+                +a("shop-view.html").__img-wrap
                   +img('files/pics/shops/7ba41a4b86ed7e3d5674632b9a8e3f4b.jpg', 'Салон-магазин Wrangler', 'fit').__img
                 h2.__title
-                  +a().__title-link Салон-магазин Wrangler
+                  +a("shop-view.html").__title-link Салон-магазин Wrangler
                 .__info
                   .__info-str
                     | г. Волгоград, просп. Университетский, 1078 #[br]
@@ -47,12 +47,12 @@ include components/breadcrumbs
                   .__info-str
                     +aMail('wrangler-info@gmail.com')
                 footer.__footer
-                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+                  +a("shop-view.html").__read-more Подробнее#[span.icon.icon-angle-right-2]
               article.-write-item-3
-                +a().__img-wrap
+                +a("shop-view.html").__img-wrap
                   +img('files/pics/shops/a4d764509eec09758c6cf0c99837ddcf.jpg', 'Фирменный магазин Masterjeans', 'fit').__img
                 h2.__title
-                  +a().__title-link Фирменный магазин Masterjeans
+                  +a("shop-view.html").__title-link Фирменный магазин Masterjeans
                 .__info
                   .__info-str
                     | г. Волгоград, просп. Героев Сталинграда, 39 #[br]
@@ -61,12 +61,12 @@ include components/breadcrumbs
                   .__info-str
                     +aMail('masterjeans@gmail.com')
                 footer.__footer
-                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+                  +a("shop-view.html").__read-more Подробнее#[span.icon.icon-angle-right-2]
               article.-write-item-3
-                +a().__img-wrap
+                +a("shop-view.html").__img-wrap
                   +img('files/pics/shops/shop-leewrangler.jpg', 'Салон-магазин Levi’s', 'fit').__img
                 h2.__title
-                  +a().__title-link Салон-магазин Levi’s
+                  +a("shop-view.html").__title-link Салон-магазин Levi’s
                 .__info
                   .__info-str
                     | г. Волгоград, ул. Рабоче-Крестьянская, 9б #[br]
@@ -75,12 +75,12 @@ include components/breadcrumbs
                   .__info-str
                     +aMail('wrangler-info@gmail.com')
                 footer.__footer
-                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+                  +a("shop-view.html").__read-more Подробнее#[span.icon.icon-angle-right-2]
               article.-write-item-3
-                +a().__img-wrap
+                +a("shop-view.html").__img-wrap
                   +img('files/pics/shops/9709c306d8dbb944a6316542f1e063fd.jpg', 'Магазин Masterjeans', 'fit').__img
                 h2.__title
-                  +a().__title-link Магазин Masterjeans
+                  +a("shop-view.html").__title-link Магазин Masterjeans
                 .__info
                   .__info-str
                     | г. Волгоград, просп. Маршала Жукова, 101 #[br]
@@ -89,5 +89,5 @@ include components/breadcrumbs
                   .__info-str
                     +aMail('masterjeans@gmail.com')
                 footer.__footer
-                  +a().__read-more Подробнее#[span.icon.icon-angle-right-2]
+                  +a("shop-view.html").__read-more Подробнее#[span.icon.icon-angle-right-2]
     +footer

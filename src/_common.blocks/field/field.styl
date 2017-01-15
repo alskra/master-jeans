@@ -8,7 +8,8 @@
   height 39px
   font-size 12px
   font-weight 500
-  color $text-color
+  color #2c2c2c
+  text-transform uppercase
   transition 0.15s
   &::placeholder
     color $text-color
@@ -22,7 +23,6 @@
     &.ik_select_link_focus
       outline 0
       border-color #2c2c2c
-      color #2c2c2c
 
   &:active,
   &.active
@@ -40,9 +40,9 @@
     border-color $red-1 !important
 
   &_area
-    height 60px
-    padding-top 5px
-    padding-bottom 5px
+    height 125px
+    padding-top 10px
+    padding-bottom 10px
     resize vertical
 
   &_select
@@ -55,7 +55,7 @@
       position absolute
       top 50%
       right 12px
-      margin -6px 2px
+      margin -5px 2px
       color #686868
       square 7px
       border-top 1px solid
@@ -67,6 +67,6 @@
         transform rotate(-45deg)
     .ik_select_link_text
       text-overflow ellipsis
-      margin-top 2px
+      margin-top 1px
 
 

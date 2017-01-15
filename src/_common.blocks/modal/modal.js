@@ -1,10 +1,10 @@
 $(function () {
     $.arcticmodal('setDefault', {
-        closeOnOverlayClick: false,
+        closeOnOverlayClick: true,
         overlay: {
             css: {
-                backgroundColor: '#1d1c2a',
-                opacity: 0.96
+                backgroundColor: '#2c2c2c',
+                opacity: 0.9
             }
         },
         afterLoadingOnShow: function(data, el) {

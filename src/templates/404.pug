@@ -1,0 +1,35 @@
+include helpers/variables
+include helpers/mixins
+include components/doctype
+include components/header
+include components/content
+include components/footer
+
+include components/breadcrumbs
+
++doctype(pages.error404.title)
+  .-wrapper
+    +header([pages.error404.url])
+    +content
+      section.-section
+        header.__header
+          .container-fluid
+            .row
+              .col-sm-5
+                h1.-section.__title._text_left Ошибка 404
+              .col-sm-7
+                +breadcrumbs([{title: '404', url: pages.error404.url}])
+        .-error-box
+          .container-fluid
+            .row
+              .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+                h2.-error-box.__title
+                  +img('img/404.png', '404').__title-img
+                  | Страница не найдена
+                p.
+                  Проверьте, правильно ли указан адрес страницы, либо начните поиск с главной страницы
+                div &nbsp;
+                +a('index.html').-btn._type_4 #[span.__label Перейти на главную]
+
+
+    +footer
