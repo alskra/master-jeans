@@ -13,7 +13,7 @@ include components/products-list
   .-wrapper
     +header([pages.catalogueMen.url, pages.catalogueView.url])
     +content
-      section.-section
+      section.-section._catalogue
         header.__header
           .container-fluid
             .row
@@ -23,9 +23,9 @@ include components/products-list
                 +breadcrumbs([{title: 'Мужчины', url: pages.catalogueMen.url}, {title: 'Джинсы', url: pages.catalogueView.url}])
         .container-fluid
           .row
-            aside.-aside-catalogue.col-sm-3
-              h2.-title.hidden-xs.hidden-sm.hidden-md.hidden-lg Категории
-              button(type='button').-toggle-menu-catalogue
+            aside.-aside-catalogue._fixed-opened.col-sm-3
+              h2.-title.hidden-xs Категории
+              button(type='button').-toggle-menu-catalogue.hidden-sm.hidden-md.hidden-lg
                 span.__icon
                   span.__line
                   span.__line
@@ -52,10 +52,9 @@ include components/products-list
                     option Ubi est germanus species
                     option Messor, nuclear vexatum iacere, et rumor
 
-        +products-list(productsList)._catalogue
-        .-btns-box
-          .container-fluid
-            +a().-btn._type_3 #[span.__icon.icon.icon-refresh]#[span.__label Показать ещё]
+              +products-list(productsList)._catalogue
+              .-btns-box
+                +a().-btn._type_3 #[span.__icon.icon.icon-refresh]#[span.__label Показать ещё]
 
 
 

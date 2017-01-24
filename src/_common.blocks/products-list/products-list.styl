@@ -6,8 +6,14 @@
     .product-item
       &:last-child
         display none
+  &_catalogue
+    .container-fluid
+      padding 0
 
-  //@media (min-width $screen-sm-min)
+  @media (min-width $screen-sm-min)
+    &_catalogue
+      .product-item
+        width unquote('calc(' + percentage(1/2) + ' - 20px)')
 
 
   @media (min-width $screen-md-min)
@@ -15,3 +21,6 @@
       .product-item
         &:last-child
           display block
+    &_catalogue
+      .product-item
+        width unquote('calc(' + percentage(1/3) + ' - 20px)')
